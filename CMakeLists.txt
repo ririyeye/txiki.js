@@ -23,6 +23,8 @@ if (CMAKE_BUILD_TYPE MATCHES "Debug")
     list(APPEND tjs_cflags -ggdb -O0 -fno-omit-frame-pointer)
 endif()
 
+SET(BUILD_NATIVE OFF CACHE BOOL "Build with machine-specific optimisations" FORCE)
+
 set(TJS__VERSION_MAJOR 24)
 set(TJS__VERSION_MINOR 6)
 set(TJS__VERSION_PATCH 0)
