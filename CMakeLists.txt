@@ -154,7 +154,7 @@ string(TOLOWER ${CMAKE_SYSTEM_NAME} TJS_PLATFORM)
 target_compile_options(tjs PRIVATE ${tjs_cflags})
 target_compile_definitions(tjs PRIVATE TJS__PLATFORM="${TJS_PLATFORM}")
 target_include_directories(tjs PUBLIC src)
-target_link_libraries(tjs qjs uv_a m3 sqlite3 m pthread CURL::libcurl)
+target_link_libraries(tjs qjs uv_a m3 sqlite3 m pthread CURL::libcurl quickjs)
 
 if (BUILD_WITH_MIMALLOC)
     target_compile_definitions(tjs PRIVATE TJS__HAS_MIMALLOC)
