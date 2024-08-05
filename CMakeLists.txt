@@ -171,4 +171,4 @@ endif()
 # add_executable(tjsc EXCLUDE_FROM_ALL
 #     src/qjsc.c
 # )
-target_link_libraries(tjsc qjs m)
+# target_link_libraries(tjsc qjs m)
