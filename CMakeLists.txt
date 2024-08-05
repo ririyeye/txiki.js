@@ -66,7 +66,7 @@ if(BUILD_WITH_MIMALLOC)
     # add_subdirectory(deps/mimalloc EXCLUDE_FROM_ALL)
 endif()
 
-find_package(CURL REQUIRED)
+# find_package(CURL REQUIRED)
 
 add_library(tjs STATIC
     src/builtins.c
