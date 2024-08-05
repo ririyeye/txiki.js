@@ -160,15 +160,15 @@ if (BUILD_WITH_MIMALLOC)
     target_link_libraries(tjs mimalloc-static)
 endif()
 
-add_executable(tjs-cli
-    src/cli.c
-)
+# add_executable(tjs-cli
+#     src/cli.c
+# )
 target_link_libraries(tjs-cli tjs)
 set_target_properties(tjs-cli
     PROPERTIES OUTPUT_NAME tjs
 )
 
-add_executable(tjsc EXCLUDE_FROM_ALL
-    src/qjsc.c
-)
+# add_executable(tjsc EXCLUDE_FROM_ALL
+#     src/qjsc.c
+# )
 target_link_libraries(tjsc qjs m)
