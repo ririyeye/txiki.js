@@ -67,6 +67,7 @@ if(BUILD_WITH_MIMALLOC)
 endif()
 
 find_package(CURL REQUIRED)
+find_package(quickjs REQUIRED)
 
 add_library(tjs STATIC
     src/builtins.c
