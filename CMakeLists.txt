@@ -4,6 +4,7 @@ project(tjs LANGUAGES C)
 
 include(ExternalProject)
 include(GNUInstallDirs)
+include(FindPkgConfig)
 
 if (NOT CMAKE_BUILD_TYPE)
     message(STATUS "No build type selected, default to Release")
@@ -67,8 +68,7 @@ if(BUILD_WITH_MIMALLOC)
 endif()
 
 find_package(CURL REQUIRED)
-find_package(quickjs REQUIRED)
-find_package(mimalloc REQUIRED)
+find_package(PkgConfig REQUIRED)
 
 add_library(tjs STATIC
     src/builtins.c
@@ -155,7 +155,7 @@ string(TOLOWER ${CMAKE_SYSTEM_NAME} TJS_PLATFORM)
 target_compile_options(tjs PRIVATE ${tjs_cflags})
 target_compile_definitions(tjs PRIVATE TJS__PLATFORM="${TJS_PLATFORM}")
 target_include_directories(tjs PUBLIC src)
-target_link_libraries(tjs qjs uv_a m3 sqlite3 m pthread CURL::libcurl quickjs mimalloc)
+target_link_libraries(tjs qjs uv_a m3 sqlite3 m pthread CURL::libcurl PkgConfig::quickjs)
 
 if (BUILD_WITH_MIMALLOC)
     target_compile_definitions(tjs PRIVATE TJS__HAS_MIMALLOC)
