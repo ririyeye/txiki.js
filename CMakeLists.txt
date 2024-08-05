@@ -47,15 +47,15 @@ endmacro()
 cpr_option(BUILD_WITH_MIMALLOC "If ON (default), build with mimalloc" ON)
 cpr_option(USE_EXTERNAL_FFI "Specify to use external ffi dependency" OFF)
 
-# add_subdirectory(deps/quickjs EXCLUDE_FROM_ALL)
+add_subdirectory(deps/quickjs EXCLUDE_FROM_ALL)
 
 option(libuv_buildtests "" OFF)
-# add_subdirectory(deps/libuv EXCLUDE_FROM_ALL)
+add_subdirectory(deps/libuv EXCLUDE_FROM_ALL)
 
-# add_subdirectory(deps/sqlite3 EXCLUDE_FROM_ALL)
+add_subdirectory(deps/sqlite3 EXCLUDE_FROM_ALL)
 
 set(BUILD_WASI "simple" CACHE STRING "WASI implementation")
-# add_subdirectory(deps/wasm3 EXCLUDE_FROM_ALL)
+add_subdirectory(deps/wasm3 EXCLUDE_FROM_ALL)
 
 if(BUILD_WITH_MIMALLOC)
     option(MI_OVERRIDE "" OFF)
@@ -63,7 +63,7 @@ if(BUILD_WITH_MIMALLOC)
     option(MI_BUILD_STATIC "" ON)
     option(MI_BUILD_OBJECT "" OFF)
     option(MI_BUILD_TESTS "" OFF)
-    # add_subdirectory(deps/mimalloc EXCLUDE_FROM_ALL)
+    add_subdirectory(deps/mimalloc EXCLUDE_FROM_ALL)
 endif()
 
 # find_package(CURL REQUIRED)
